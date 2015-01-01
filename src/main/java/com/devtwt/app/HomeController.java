@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.devtwt.app.constants.ClassNameConstants;
-import com.devtwt.app.util.Bus;
 import com.devtwt.app.bklogic.*;
 
 /**
@@ -60,19 +58,22 @@ public class HomeController {
 	
 	@RequestMapping(value = "/test1_1", method = RequestMethod.POST)
 	public String test1_1(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("test1_1 has been called");
 		return "test1_1";
 	}
 	@RequestMapping(value = "/test1_2", method = RequestMethod.POST)
 	public String test1_2(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		
+		logger.info("test1_2 has been called");
 		return "test1_2";
 	}
 	@RequestMapping(value = "/test1_2_1", method = RequestMethod.POST)
 	public String test1_2_1(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("1-2-1 has been called");
 		return "test1_2_1";
+	}
+	@RequestMapping(value = "/tk_sandbox", method = RequestMethod.POST)
+	public String kt_sandbox(Locale locale, Model model) {
+		logger.info("tk_sandbox has been called");
+		return "tk_sandbox";
 	}
 }

@@ -4,19 +4,13 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <%@ page session="false"%>
-
-<html>
-<head>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- ******** css ******** -->
 <!-- lib css -->
-<link rel="stylesheet" type="text/css"
-	href='<spring:url value="/resources/css/base.css" />' />
+<link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/base.css" />' />
 
 <title>Home</title>
-</head>
-<body>
 
 	<!-- ******** header.jsp ******** -->
 	<jsp:include page="header.jsp" flush="true" />
@@ -30,6 +24,12 @@
 	<div id="contentsArea">
 		<h1>HOME</h1>
 		<P>The time on the server is ${serverTime}.</P>
+
+		<div id="tk">
+		<form:form modelAttribute="placeAttrModel" action="${pageContext.request.contextPath}/tk_sandbox">
+			<spring:url var="kt_sandbox_Url" value="/tk_sandbox" />
+			<input id="moveBtn" type="submit" value="tk-sandbox" />
+		</form:form>
 
 		<p>Click a button to jump!</p>
 		<div id="jumpList">
@@ -53,12 +53,14 @@
 			</div>
 			　　　　　　　　　　↓			
 			<div id="layer3">
-				<form:form modelAttribute="placeAttrModel" action="${pageContext.request.contextPath}/test1_2_1">
-					<spring:url var="test1_2_1Url" value="/test1_2_1" />
-					<input id="moveBtn" type="submit" value="1-2-1" />
-				</form:form>
+			<form:form modelAttribute="placeAttrModel" action="${pageContext.request.contextPath}/test1_2_1">
+				<spring:url var="test1_2_1Url" value="/test1_2_1" />
+				<input id="moveBtn" type="submit" value="1-2-1" />
+			</form:form>
 			</div>
+			
+
+			</div>
+			
 		</div>
 	</div>
-</body>
-</html>
